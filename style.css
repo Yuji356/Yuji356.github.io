@@ -1213,7 +1213,7 @@ body {
   letter-spacing: 1px;
   text-align: center;
   transition: 0.3s ease;
-  margin: 0 200px
+  margin: 0 100px
 }
 .menu button:hover {
   background: #575c5da8;
