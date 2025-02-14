@@ -82,28 +82,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const star = document.createElement('div');
     star.className = 'shoot_star';
 
-    const maxX = 200; // Adjust for desired range
-    const maxY = 200; // Adjust for desired range
-    const randomTop = Math.random() * 2 * maxY - maxY;
-    const randomLeft = Math.random() * 1 * maxX - maxX; // Increased horizontal spread
+    // Set random position
+    const startX = Math.random() * window.innerWidth; 
+    const startY = Math.random() * window.innerHeight * 0.5; // Appears in the top half
 
-    const randomDelay = Math.random() * 5; // Adjust for desired range of delays (in seconds)
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
 
-    star.style.top = `calc(50% + ${randomTop}vh)`;
-    star.style.left = `calc(25% + ${randomLeft}vw)`;
-    star.style.animationDelay = `${randomDelay}s`;
-    star.style.animation = `tail 3s ease-in-out forwards, falling 3s ease-in-out forwards`;
-
-    // Remove star after animation completes
-    star.addEventListener('animationend', () => {
-      star.remove();
-    });
+    // Set random animation duration
+    const duration = Math.random() * 2 + 1.5; // Between 1.5s and 3.5s
+    star.style.animation = `tail ${duration}s ease-in-out forwards, falling ${duration}s ease-in-out forwards`;
 
     document.querySelector('.night').appendChild(star);
-  }
 
-  // Continuously create shooting stars
-  setInterval(createShootingStar, 750); // Create a new star every 3 seconds (adjust as needed)
+    // Remove the star after animation completes
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000);
+}
+
+// Continuously generate shooting stars at random intervals
+setInterval(createShootingStar, 500); // Creates a new star every 0.5 seconds
+
+  
+  
 
   // --- NEW CODE FOR POEM POP-UP ---
   const poemButtons = document.querySelectorAll('.menu button');
@@ -124,6 +126,14 @@ function togglePoem(number) {
       // Show the poem and overlay
       poemContainer.style.display = "block";
       overlay.style.display = "block";
+
+      if (number % 2 === 1) { // Odd numbers → Left
+        poemContainer.classList.add("poem-left");
+        poemContainer.classList.remove("poem-right");
+      } else { // Even numbers → Right
+        poemContainer.classList.add("poem-right");
+        poemContainer.classList.remove("poem-left");
+      }
   } else {
       console.log(`Poem container ${number} not found`);
   }
