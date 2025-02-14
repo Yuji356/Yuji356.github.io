@@ -21,12 +21,21 @@ body {
   padding: 50px 0px;
   height: 100%;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
 
-.night{
-  position: absolute;/* position: relative; */
-  width: 100vw;
-  height: 100vh;
-  transform: rotateZ(35deg);
+.night {
+  transform: rotateZ(45deg);
+}
+
+@media (max-width: 768px) {
+  .night {
+      transform: rotateZ(25deg);
+  }
 }
 
 .stars {
@@ -76,13 +85,25 @@ body {
 
 @keyframes falling{
   0%{
-    transform: translateX(0);
+    transform: translateX(0) translateY(0);
   }
   100%{
-    transform: translateX(300px);
+    transform: translateX(300px) translateY(150px);
   }
 }
-
+.shoot_star {
+  position: absolute;
+  height: 4px;
+  background: linear-gradient(-45deg, hsl(200, 100%, 70%), rgba(255, 255, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px hsla(200, 100%, 70%, 0.5));
+  animation: tail 3s ease-in-out forwards, falling 3s ease-in-out forwards;
+}
+@media (max-width: 768px) {
+  .shoot_star {
+    height: 2px; /* Smaller tail for mobile */
+  }
+}
 .shoot_star::before, .shoot_star::after{
   content: '';
   position: absolute;
@@ -165,20 +186,25 @@ body {
   color: rgb(254, 252, 252);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 35px;
+  font-size: clamp(1rem, 4vw, 2.5rem); /* Responsive text size */
   box-sizing: content-box;
   height: 40px;
   padding: 10px 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: 100%;
   border-radius: 8px;
-  margin-left: 42%;
-  margin-top: 2rem;
+  text-align: center;
+  margin: 2rem auto; /* Centers it properly */
 }
+
 
 .words {
   overflow: hidden;
   position: relative;
-  height: 50px;
+  height: clamp(15px, 5vw, 45px); /* Responsive height */
 }
 .word {
   display: block;
@@ -221,8 +247,21 @@ body {
   }
 }
 .flowers {
-  position: relative;
-  transform: scale(0.9);
+
+  position:relative;
+  transform: scale(0.8); /* Reduce size for smaller screens */
+}
+
+@media (max-width: 768px) {
+  .flowers {
+    transform: scale(0.6); /* Shrink even more for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .flowers {
+    transform: scale(0.5);
+  }
 }
 
 .flower {
@@ -1180,7 +1219,7 @@ body {
   left: 50%;
   transform: translate(-175%, -1300%);
   color: white; /* Adjust text color */
-  font-size: 1rem; /* Change text size */
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
   text-align: center;
   z-index: 100; /* Make sure the text appears over the flowers */
   font-family: 'Arial', sans-serif; /* Use a font of your choice */
@@ -1193,16 +1232,23 @@ body {
   z-index: 100;
   padding: 10px;
   display: flex; /* Change to flexbox for horizontal layout */
+  gap:10px;
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Vertically align items */
+  flex-wrap: wrap;
   width: 100%; /* Make menu span the full width */
+}
+@media (min-width: 1024px) { /* Apply on larger screens */
+  .menu {
+    gap: 100px; /* Increase spacing on PC/laptop */
+  }
 }
 
 .menu button {
-  font-size: 14px;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   border-radius: 5px;
   text-decoration: none;
-  padding: 10px 10px;
+  padding: 10px 15px;
   color: #fff;
   background: transparent;
   border: none; /* Remove default button border */
@@ -1213,7 +1259,7 @@ body {
   letter-spacing: 1px;
   text-align: center;
   transition: 0.3s ease;
-  margin: 0 100px
+  margin: 0 10px
 }
 .menu button:hover {
   background: #575c5da8;
@@ -1221,27 +1267,42 @@ body {
 }
 
 .poem-container {
-  position: fixed; /* Keeps it in place when scrolling */
+  display: none; /* Hide all poem containers initially */
+  position: fixed; /* Keeps it in place */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the container */
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  padding: 20px;
+  transform: translate(-50%, -50%); /* Centers it */
+  width: 90%; /* Allow it to adjust dynamically */
+  max-width: 500px; /* Prevents it from being too wide */
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
-  
-  display: none; /* Hidden by default */
-  width: 60%; /* Adjust as needed */
-  max-width: 500px;
-  z-index: 1000; /* Ensures it's on top */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Optional: adds a subtle border */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden; /* Prevents unwanted scroll */
 }
+
+@media (min-width: 1024px) { /* Only for larger screens */
+  .poem-left {
+    left: 15%;
+    transform: translate(0, -50%);
+  }
+
+  .poem-right {
+    left: 65%;
+    transform: translate(0, -50%);
+  }
+}
+
+
+
 
 /* Glowing text effect */
 .poem-container p {
   color: #f8eeee;
-  font-size: 24px;
+ 
+  font-size: clamp(1rem, 2vw, 1.5rem);
   text-shadow: 0 0 5px #fff, 0 0 10px #0099ff, 0 0 15px #0099ff;
-  
+  word-wrap: break-word; /* Ensures long words don't overflow */
 }
 
 /* Fullscreen dark transparent overlay */
@@ -1251,7 +1312,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  background: rgba(0, 0, 0, 0.3); /* Dark transparent background */
   display: none; /* Hidden by default */
   z-index: 999; /* Behind the poem but above everything else */
 }
@@ -1267,3 +1328,4 @@ body {
   background: none;
   border: none;
 }
+
