@@ -5,19 +5,24 @@
 }
 
 body {
-    display: grid;
-    height: 100vh;
-    place-items: center;
-    background: #000000;
-    margin: 0;
-    overflow: hidden;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000000;
+}
+
+
+.fireworkDiv, .stars {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .fireworkDiv{
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    
     background-color: transparent;
     z-index: 0;
 }
@@ -25,8 +30,7 @@ body {
 
 .stars {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+  
     top: 0;
     left: 0;
     z-index: 1;
@@ -46,89 +50,79 @@ body {
 }
 
 
+    
+ 
+
+
+
 .button {
-    margin-top: 23%;
-    left: 40%;
-    position: relative;
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    transition: filter 250ms;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  animation: twinkle-bright 1.5s infinite alternate ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
-.shadow {
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: hsl(270deg, 50%, 10%) ; /* Darker purple shadow */
-    will-change: transform;
-    transform: translateY(2px);
-    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+.button::before {
+  content: '★'; /* Star symbol */
+  font-size: 24px; /* Adjust size */
+  color: rgba(255, 255, 255, 1); /* Bright white */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(255, 255, 255, 0.6), 
+               0 0 30px rgba(255, 255, 255, 0.4);
+  display: block;
 }
 
-.edge {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: linear-gradient(to left,
-            hsl(270, 98%, 16%) 0%, /* Darker purple edge */
-            hsl(270, 100%, 30%) 8%, /* Slightly lighter purple */
-            hsl(270, 100%, 30%) 92%, /* Slightly lighter purple */
-            hsl(270, 95%, 15%) 100%); /* Darker purple edge */
-}
-
-.front {
-    display: block;
-    position: relative;
-    padding: 12px 42px;
-    border-radius: 12px;
-    font-size: 1.25rem;
-    color: white;
-    background: hsl(270, 100%, 35%); /* Main purple button color */
-    will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-}
-
-.button:hover {
-    filter: brightness(110%);
-}
-
-.button:hover .front {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
-
-.button:hover .shadow {
-    transform: translateY(4px);
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
-
-.button:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-}
-
-.button:active .shadow {
-    transform: translateY(-6px);
-    transition: transform 34ms;
-}
-
-
-.night{
-    position: absolute;/* position: relative; */
-    width: 100%;
-    height: 100%;
-    transform: rotateZ(35deg);
+@keyframes twinkle-bright {
+  0% { 
+      opacity: 0.6; 
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 
+                   0 0 10px rgba(255, 255, 255, 0.4);
   }
+  100% { 
+      opacity: 1; 
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+                   0 0 30px rgba(255, 255, 255, 0.8); 
+  }
+}
+
+/* HOVER EFFECT */
+.button:hover {
+  transform: translate(-50%, -50%) scale(1.3); /* Make it slightly bigger */
+  filter: brightness(150%);
+}
+
+.button:hover::before {
+  color: #FFD700; /* Change to gold on hover */
+  text-shadow: 0 0 20px rgba(255, 215, 0, 1), 
+               0 0 40px rgba(255, 215, 0, 0.8), 
+               0 0 60px rgba(255, 215, 0, 0.6);
+}
+.night {
+  transform: rotateZ(45deg);
+}
+.flower-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+}
+
+
+@media (max-width: 768px) {
+  .night {
+      transform: rotateZ(45deg);
+  }
+}
   
   .shoot_star {
     
@@ -192,8 +186,8 @@ body {
   }
   
   .shoot_star:nth-child(1){
-    top: calc(10% - 100px);
-    left: calc(90% - 250px);
+    top: 10vh;
+    left: 90vw;
     animation-delay: 1s;
   }
   
@@ -202,8 +196,8 @@ body {
   }
   
   .shoot_star:nth-child(2){
-    top: calc(20% - 50px);
-    left: calc(65% - 200px);
+    top: 20vh;
+    left: 65vw;
     animation-delay: 2s;
   }
   
@@ -212,8 +206,8 @@ body {
   }
   
   .shoot_star:nth-child(3){
-    top: calc(30% - 0px);
-    left: calc(25% - 150px);
+    top: 30vh;
+    left: 25vw;
     animation-delay: 3s;
   }
   
@@ -240,3 +234,5 @@ body {
   .shoot_star:nth-child(5)::before, .shoot_star:nth-child(5)::after{
     animation-delay: 5s;
   }
+
+  
