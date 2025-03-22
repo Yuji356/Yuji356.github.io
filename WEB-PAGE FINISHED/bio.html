@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure consistent box sizing */
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(oj1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh; /* Use min-height instead */
+            display: flex;
+            flex-direction: column; /* Ensure proper layout structure */
+        }
+
+        .content {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            width: 100%; 
+            color: #fff; 
+            padding: 50px 0; /* Top and bottom padding */
+        }
+
+        .navbar {
+            width: 1200px;
+            height: 75px;
+            margin: 300;
+        }
+
+        .icon {
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 20px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .menu {
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li a:hover {
+            color: #ff7200;
+        }
+
+        .search {
+            width: 330px;
+            float: left;
+            margin-left: 270px;
+        }
+
+        .srch {
+            font-family: 'Times New Roman';
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 40px;
+            background: #ff7200;
+            border: 2px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            font-size: 15px;
+            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            color: #000;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .srch:focus {
+            outline: none;
+        }
+
+        .content h1 {
+            font-family: 'Arial';
+            font-size: 50px;
+            padding-left: 20px;
+            letter-spacing: 2px;
+        }
+
+        body {
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(oj1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .biography-grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            max-width: 2000px;
+            padding: 150px;
+            background-color: rgba(0,0,0,0.50);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+       
+
+        .photo {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .photo img {
+            width: 75%;
+            height: 90%;
+            border-radius: 50%;
+        }
+
+        .info {
+            padding: 1rem;
+            color: white;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .info h1{
+            margin-top: 20%;
+        }
+        
+
+        .sections {
+            grid-column: 1 / span 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .about, .experience, .contact, .skills, .education, .motivations, .goals, .personality, .achievements {
+            border: solid orangered;
+            background-color: rgba(0, 0, 0, 0.50);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">HOMEPAGE</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about_us.html">ABOUT</a></li>
+                    <li><a href="Topics.html">TOPICS</a></li>
+                    <li><a href="hih2.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="biography-grid">
+            <div class="photo"> 
+                <img src="prof.jpg" alt="Profile Photo">
+            </div>
+            <div class="info">
+                <h1>OSKAR JENE T. CARCASONA</h1>
+                <h4>A 19 years old student at Cebu Technological University - Argao Campus.</h4>
+              
+                
+            </div>
+            <div class="sections">
+                <div class="about">
+                    <h2>About Me</h2>
+                    <p>I am studying for Bachelor of Science in Information Technology in Argao, I was born in Iligan City on April 17,2005 and live in Carcar City where my ancestors lives. Also, a handsome son of my mother.</p>
+                </div>
+                <div class="experience">
+                    <h2>Experience</h2>
+                    <ul>
+                        <li>Video editing(2018-2022)</li>
+                        <li>Videography (2020-2022)</li>
+                        <li>I experienced left by someone who promised to stay</li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <p>Email: ojcarcasona8@gmail.com</p>
+                    <p>Phone: (+63) 9917195950 </p>
+                </div>
+            </div>
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Eating when jelous</li>
+                    <li>Sleeping when jelous</li>
+                    <li>Delulu</li>
+                    <li>Easily get Jelous</li>
+                    
+                </ul>
+            </div>
+            <div class="education">
+                <h2>Education</h2>
+                <p>Bachelor of Science in Information Technology</p>
+                <p>CTU-AC</p>
+            </div>
+            <div class="motivations">
+                <h2>Motivations</h2>
+                <p>I am motivated by the desire to finish my study and help my family.</p>
+            </div>
+            <div class="goals">
+                <h2>Goals</h2>
+                <p>To finish my study and to develop an app where people can communicate and play together a better app than messenger and to forget the pain that she caused.</p>
+            </div>
+            <div class="personality">
+                <h2>Personality</h2>
+                <p>Respectfull, Kind, Gentle, Geniune, friendly.</p>
+            </div>
+            <div class="achievements">
+                <h2>Achievements</h2>   
+                <p>Taken for granted</p>
+                <p>Consistent Seloso</p>
+                <p>Certified Overthinker</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

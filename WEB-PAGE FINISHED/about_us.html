@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(oj1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh; /* Ensure the main div takes at least full viewport height */
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .navbar, .content {
+            width: 1200px;
+          
+        }
+
+
+        .icon {
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 20px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+       .menu {
+            
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li a:hover {
+            color: #ff7200;
+        }
+
+
+        .btn {
+            width: 100px;
+            height: 40px;
+            background: #ff7200;
+            border: 2px solid #ff7200;
+            margin-top: 13px;
+            color: #fff;
+            font-size: 15px;
+            border-radius: 5px;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            color: #000;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .srch:focus {
+            outline: none;
+        }
+
+        .content {
+
+            margin-left: 12%;
+            width: 1200px;
+            padding: 20px; /* Adjusted for better spacing */
+            color: #fff;
+            overflow: auto; /* Allow scrolling in case of overflow */
+        }
+
+        .content .par {
+            padding-bottom: 25px;
+            font-family: Arial;
+            letter-spacing: 1.2px;
+            line-height: 30px;
+        }
+
+        .content h1 {
+            font-family: 'Times New Roman';
+            font-size: 50px;
+            margin-top: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .content .cn {
+            width: 160px;
+            height: 40px;
+            background: orangered;
+            border: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .content .cn a {
+            text-decoration: none;
+            color: #000;
+            transition: .3s ease;
+        }
+
+        .cn:hover {
+            background-color: #fff;
+        }
+
+        .content span {
+            color: #ff7200;
+            font-size: 45px;
+        }
+
+        .content p{
+            
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 1rem;
+           
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">ANIMEX</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about_us.html">ABOUT</a></li>
+                    <li><a href="Topics.html">TOPICS</a></li>
+                    <li><a href="hih2.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div> 
+        <div class="content">
+            <center>
+            <h1>MY HERO ACADEMIA <br><span>2016</span></h1>
+        </center>
+           <center>
+            <p class="par">My Hero Academia is a critically acclaimed anime series created by Kohei Horikoshi, set in a world where the majority of the population possesses superpowers known as "quirks." The story revolves around Izuku Midoriya, a determined young boy born without a quirk, which places him at a significant disadvantage in a society that highly values superhuman abilities. Despite this, Izuku dreams of becoming a hero like his idol, All Might, the Symbol of Peace, who embodies the ideals of heroism.
+                When a chance encounter with All Might leads to him inheriting the legendary hero's quirk, One For All, Izuku's life takes a dramatic turn. He enrolls at U.A. High School, a prestigious academy dedicated to training future heroes. Here, he meets a diverse group of classmates, including the hot-headed Katsuki Bakugo, who was once his childhood friend, and Shoto Todoroki, a talented student with a complicated family background. Throughout the series, these relationships develop, showcasing the importance of camaraderie and rivalry in the pursuit of their heroic ambitions.
+                <br><br>The narrative follows Izuku and his classmates as they undergo rigorous training, participate in practical hero courses, and face off against various villains, including the menacing League of Villains led by the enigmatic Tomura Shigaraki. Each arc introduces new challenges and adversaries, forcing the characters to confront their fears, insecurities, and moral dilemmas.
+                My Hero Academia explores profound themes of heroism, courage, and the struggle between good and evil. It delves into the complexities of what it means to be a hero in a world where the line between heroism and villainy is often blurred. The series emphasizes the importance of hard work, resilience, and the power of friendship, highlighting how bonds between characters can inspire growth and change.
+                With its well-developed characters, intense action sequences, and emotional depth, My Hero Academia has captured the hearts of fans worldwide, becoming a significant part of contemporary anime culture. The series also raises thought-provoking questions about society, identity, and the responsibilities that come with power, making it a rich and engaging narrative that resonates with audiences of all ages.</p>
+            </center>
+        </div>
+    </div>        
+</body>
+</html>

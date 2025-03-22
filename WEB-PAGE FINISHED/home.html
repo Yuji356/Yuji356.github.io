@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        html, body {
+            height: 100%; /* Ensure the body takes full height */
+        }
+
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(oj1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+        .navbar, .content {
+            width: 1200px;
+          
+        }
+
+        .icon {
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-family: Arial;
+            padding-left: 20px;
+            float: left;
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .menu {
+            
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+
+        ul {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        ul li a:hover {
+            color: #ff7200;
+        }
+
+        .content {
+            width: 1200px;
+            height: 240;
+            margin: 240;
+            color: #fff;
+            position: relative;
+        }
+
+        .content .par {
+            padding-left: 20px;
+            padding-bottom: 25px;
+            font-family: Arial;
+            letter-spacing: 1.2px;
+            line-height: 30px;
+        }
+
+        .content h1 {
+            font-family: 'Times New Roman';
+            font-size: 50px;
+            padding-left: 20px;
+            margin-top: 9%;
+            letter-spacing: 2px;
+        }
+
+        .content .cn {
+            margin-top: 1rem;
+            width: 160px;
+            height: 40px;
+            background: orangered;
+            border: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .content .cn a {
+            text-decoration: none;
+            color: #000;
+            transition: .3s ease;
+        }
+
+        .cn:hover {
+            background-color: #fff;
+        }
+
+        .content span {
+            color: #ff7200;
+            font-size: 65px;
+        }
+
+        .photos {
+            display: flex;
+            flex-wrap: wrap; /* Allow multiple rows */
+            width: 750px; /* Adjust to fit new images */
+            font-family: 'Times New Roman';
+            font-size: 25px;
+            color: white;
+            position: absolute;
+            top: 2rem;
+            left: 86%; /* Center the images */
+            transform: translateX(-50%); /* Center adjustment */
+            max-height: 70vh; /* Set a maximum height */
+            overflow-y: auto; /* Allow vertical scrolling */
+           scrollbar-width: none;
+          
+            
+
+            
+        }
+
+        .photos .pic {
+            margin: 15px; /* Space between images */
+            position: relative; /* For modal effect */
+        }
+
+        .photos .pic img {
+            /*display: flex;*/
+            width: 180px;
+            height: 240px;
+            cursor: pointer; /* Change cursor to pointer */
+            border: 5px solid orangered; /* Border style */
+        }
+
+        .photos img {
+            width: 180px;
+            height: 240px;
+            margin-right: 25px;
+            overflow: hidden;
+        }
+
+        .photos:hover .pic {
+            filter: blur(0px);
+            opacity: 1;
+            transform: (0.98);
+        }
+
+        .photos:hover .pic:hover {
+            filter: blur(0px);
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .photos:hover .pic:hover {
+            transform: scale(1.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #2c2c2c;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #ff7200;
+            width: 50%;
+            color: #fff;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .close {
+            color: #ff7200;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            
+            color: #ff0000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">ANIMEX</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="About_us.html">ABOUT</a></li>
+                    <li><a href="Topics.html">TOPICS</a></li>
+                    <li><a href="hih2.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div> 
+        <div class="content">
+            <h1>MY HERO<br><span>ACADEMIA</span><br>CHARACTERS</h1>
+            <p class="par">Let’s not just get it back. <br>Let’s make things better than before.<br> Let’s all go together. Go beyond! <br>
+                <button class="cn"><a href="bio.html">AUTHOR</a></button>
+            </p>
+
+            <div class="photos">
+                <div class="pic" onclick="openModal('modal1')">
+                    <center>
+                        <p>MIDNIGHT</p>
+                    </center>
+                    <img src="oj1.jpeg" alt="Midnight">
+                </div>
+                <div class="pic" onclick="openModal('modal2')">
+                    <center>
+                        <p>TOGA</p>
+                    </center>
+                    <img src="oj2.png" alt="Toga">
+                </div>
+                <div class="pic" onclick="openModal('modal3')">
+                    <center>
+                        <p>DEKU</p>
+                    </center>
+                    <img src="oj3.png" alt="Deku">
+                </div>
+                <div class="pic" onclick="openModal('modal4')">
+                    <center>
+                        <p>ALL MIGHT</p>
+                    </center>
+                    <img src="oj4.png" alt="All Might">
+                </div>
+                <div class="pic" onclick="openModal('modal5')">
+                    <center>
+                        <p>SHIGARAKI</p>
+                    </center>
+                    <img src="oj5.jpg" alt="Shigaraki">
+                </div>
+                <div class="pic" onclick="openModal('modal6')">
+                    <center>
+                        <p>URARAKA</p>
+                    </center>
+                    <img src="oj6.jpg" alt="Uraraka">
+                </div>
+                <div class="pic" onclick="openModal('modal7')">
+                    <center>
+                        <p>BAKUGO</p>
+                    </center>
+                    <img src="oj7.jpg" alt="Bakugo">
+                </div>
+                <div class="pic" onclick="openModal('modal8')">
+                    <center>
+                        <p>TODOROKI SHOTO</p>
+                    </center>
+                    <img src="oj8.jpg" alt="Todoroki Shoto">
+                </div>
+                <div class="pic" onclick="openModal('modal9')">
+                    <center>
+                        <p>MONOMA</p>
+                    </center>
+                    <img src="oj9.jpg" alt="Monoma">
+                </div>
+                <div class="pic" onclick="openModal('modal10')">
+                    <center>
+                        <p>SHINSO</p>
+                    </center>
+                    <img src="oj10.jpg" alt="Shinso">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Midnight -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Midnight</h2>
+            <p><strong>Real Name:</strong> Nemuri Kayama</p>
+            <p><strong>Quirk:</strong> Somnambulist (induces sleep)</p>
+            <p>Midnight is a pro hero known for her alluring appearance and somnolent personality. With her quirk, Somnambulist, she can put her enemies to sleep, often employing a seductive demeanor. Despite her playful attitude, she takes her responsibilities seriously.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Toga -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Toga</h2>
+            <p><strong>Real Name:</strong> Himiko Toga</p>
+            <p><strong>Quirk:</strong> Blood Curdle (transforms by ingesting blood)</p>
+            <p>Toga is a member of the League of Villains, notorious for her quirk Blood Curdle. Her eccentric and cheerful personality hides a darker side as she revels in chaos and bloodshed. Her obsession with love makes her a complex character, blurring the lines between heroism and villainy.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Deku -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Deku</h2>
+            <p><strong>Real Name:</strong> Izuku Midoriya</p>
+            <p><strong>Quirk:</strong> One For All (inherited ability)</p>
+            <p>Deku is the main protagonist of the series, born without a quirk. He inherits the powerful ability One For All from All Might. Deku is characterized by his unwavering determination and strong sense of justice, embodying the core themes of heroism and perseverance.</p>
+        </div>
+    </div>
+
+    <!-- Modal for All Might -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>All Might</h2>
+            <p><strong>Real Name:</strong> Toshinori Yagi</p>
+            <p><strong>Quirk:</strong> One For All (legendary strength)</p>
+            <p>All Might, the Symbol of Peace, is known for his incredible strength and unwavering spirit. He serves as a mentor to Deku and embodies the ideals of heroism, inspiring countless individuals to pursue their dreams of becoming heroes.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Shigaraki -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Shigaraki</h2>
+            <p><strong>Real Name:</strong> Tomura Shigaraki</p>
+            <p><strong>Quirk:</strong> Decay (disintegrates anything touched)</p>
+            <p>Shigaraki is the main antagonist of the series, leading the League of Villains. His tragic backstory contributes to his nihilistic worldview, and he poses a significant threat to the heroes.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Uraraka -->
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Uraraka</h2>
+            <p><strong>Real Name:</strong> Ochaco Uraraka</p>
+            <p><strong>Quirk:</strong> Zero Gravity (makes objects weightless)</p>
+            <p>Uraraka is a member of Class 1-A and a promising hero. Her cheerful and optimistic personality is complemented by her determination to become a hero for her family's financial struggles, representing the heart and perseverance of aspiring heroes.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Bakugo -->
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <h2>Bakugo</h2>
+            <p><strong>Real Name:</strong> Katsuki Bakugo</p>
+            <p><strong>Quirk:</strong> Explosion (creates explosions from sweat)</p>
+            <p>Bakugo is known for his explosive personality and is a rival to Deku. Despite his fierce and competitive nature, he has a deep-seated desire to prove himself and become the number one hero, showcasing complex character development throughout the series.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Todoroki Shoto -->
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <h2>Todoroki Shoto</h2>
+            <p><strong>Real Name:</strong> Shoto Todoroki</p>
+            <p><strong>Quirk:</strong> Half-Cold Half-Hot (manipulates ice and fire)</p>
+            <p>Todoroki is a powerful hero-in-training with a complex family background. His struggle to reconcile his past with his aspirations showcases themes of identity and self-acceptance throughout his journey.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Monoma -->
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <h2>Monoma</h2>
+            <p><strong>Real Name:</strong> Neito Monoma</p>
+            <p><strong>Quirk:</strong> Copy (mimics abilities)</p>
+            <p>Monoma is a student from Class 1-B, known for his competitive personality and rivalry with Class 1-A. His character explores themes of ambition and the pressures faced by students in their journey to become heroes.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Shinso -->
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <h2>Shinso</h2>
+            <p><strong>Real Name:</strong> Hitoshi Shinso</p>
+            <p><strong>Quirk:</strong> Brainwashing (controls others by speaking)</p>
+            <p>Shinso is a student from General Studies who demonstrates remarkable growth and determination to prove his worth as a hero, highlighting the challenges faced by those in non-hero courses.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
