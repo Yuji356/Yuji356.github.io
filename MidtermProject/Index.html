@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Emily Claire</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Images/avatar.jpg" alt="Profile Avatar" class="avatar">
+            Oskar Jene Carcasona
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html" class="active">Home</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Favorites.html">Favorites</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="slide active">
+                <img src="Images/oj.jpg" alt="Slide 1">
+                <div class="overlay">
+                    <h2>Hello, I'm Oskar.</h2>
+                    <p>I am a student at Cebu Technological University, pursuing a Bachelor of Science in Information Technology. I am passionate about technology and eager to expand my skills in software development, system design, and emerging IT trends.</p>
+                    
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Images/oj2.jpg" alt="Slide 2">
+                <div class="overlay2">
+                    <h2>finding confidence in solitude</h2>
+                    <p>College life is a journey of self-discovery. Between endless assignments and sleepless nights, we learn to embrace challenges, build resilience, and grow into the people we are meant to be.</p>
+                    
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Images/oj3.jpg" alt="Slide 3">
+                <div class="overlay3">
+                    <h2>embracing change with open arms</h2>
+                    <p>"Growth is painful. Change is painful. But nothing is as painful as staying stuck somewhere you don’t belong." – Mandy Hale</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
+<script>
+    let index = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+
+document.querySelector(".next").addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const container = document.querySelector(".carousel-container");
+    container.style.transform = `translateX(-${index * 100}vw)`;
+}
+
+setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+}, 5000);
+</script>
+</body>
+</html>
