@@ -347,4 +347,125 @@ label {
     
   } 
 
+  @media (max-width: 1200px) {
+    /* Adjust for large tablets */
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    #art-exhibit {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .artwork {
+        width: 230px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Adjust for tablets */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .carousel-container {
+        width: 200%;
+    }
+
+    .slide {
+        width: 50vw;
+    }
+
+    #art-exhibit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .artwork {
+        width: 220px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust for small tablets and mobile phones */
+    header {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .slide {
+        width: 100vw;
+    }
+
+    #art-exhibit {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork {
+        width: 100%;
+        height: auto;
+    }
+
+    .comments-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Adjustments for very small mobile devices */
+    .logo {
+        font-size: 14px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .overlay h2, .overlay2 h2, .overlay3 h2 {
+        font-size: 35px;
+    }
+
+    .overlay p, .overlay2 p, .overlay3 p {
+        font-size: 16px;
+    }
+
+    .artwork {
+        width: 180px;
+        height: 240px;
+    }
+}
+
   
