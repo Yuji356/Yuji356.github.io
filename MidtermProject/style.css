@@ -1,356 +1,11 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url(Images/background.jpg);
-    background-size: cover;
-   
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #010101a3;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color:white;
-}
-nav{
-    margin-right: 50px;
-} 
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    
-   
-}
-
-nav ul li a {
-    font-size: 23px;
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ff6b6b;
-    transform: scale(1.1); 
-}
-
-
-nav ul li a.active {
-    font-weight: bold;
-    border-bottom: 2px solid #ff6b6b; 
-    padding-bottom: 3px;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.carousel-container {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-.overlay, .overlay2, .overlay3 {
-    position: absolute;
-    bottom: 10%;
-    left: 30%;
-    transform: translateX(-50%);
-    color: white;
-    max-width: 600px;
-    padding: 30px;
-    border-radius: 10px;
-    backdrop-filter: blur(15px);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-}
-.overlay2{
-    left: 80%;
-}
-.overlay3{
-    left: 50%;
-}
-
-/* Movie Poster Typography */
-.overlay h2, .overlay2 h2,.overlay3 h2 {
-    font-size: 50px;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
-}
-
-/* Subtitle/Text Effect */
-.overlay p, .overlay2 p, .overlay3 p{
-    font-size: 20px;
-    font-style: italic;
-    line-height: 1.8;
-    color: #f1f1f1;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-button {
-    padding: 12px 25px;
-    border: none;
-    background: #ff6b6b;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background: #393838;
-    transform: scale(1.05);
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgb(0 0 0 / 81%);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    gap: 10px; 
-}
-
-.avatar {
-    width: 80px;  
-    height: 80px;
-    border-radius: 50%; 
-    object-fit: cover;
-    border: 2px solid #333; 
-}
-
-
-/*FAVORITES CSS*/
-
-#content {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    padding-bottom: 50px;
-    margin-top: 130px;
-}
-
-#gallery-header {
-    text-align: center;
-    border-bottom: 3px solid #2c2626;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-#art-exhibit {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    gap: 30px;
-}
-
-/* Artwork Styling */
-.artwork {
-    width: 280px;
-    height: 350px;
-    background-color: #efefef;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.763); /* Add shadow */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border: 5px solid rgb(48, 52, 45);
-}
-
-
-#artwork-1 {
-    background-image: url('images/image1.jpg');
-}
-
-#artwork-2 {
-    background-image: url('images/image2.jpg');
-}
-
-#artwork-3 {
-    background-image: url('images/image3.jpg');
-}
-
-#artwork-4 {
-    background-image: url('images/image4.jpg');
-}
-
-#artwork-5 {
-    background-image: url('images/image5.jpg');
-}
-
-#artwork-6 {
-    background-image: url('images/image6.jpg');
-}
-#artwork-7 {
-    background-image: url('images/image7.jpg');
-}
-#artwork-8 {
-    background-image: url('images/image8.jpg');
-}
-
-/* Like Button (Heart) */
-.heart1 {
-    background-color: #EEF1F2;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.heart1:hover {
-    background-color: #A3ACE4;
-}
-
-.tosmall {
-    width: 24px;
-    height: 24px;
-}
-
-/* Comment Section */
-.comments-section {
-    padding: 10px;
-    text-align: center;
-    
-}
-
-.comments-list {
-    border: 3px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    width: 90%;
-    max-height: 150px; /* Set a fixed height for scrolling */
-    overflow-y: auto; /* Enables scrolling when there are too many comments */
-    background: #fff;
-    text-align: left;
-    list-style: none; /* Hides bullet points */
-}
-
-
-
-
-
-/* Comment Input and Button */
-.comment-input {
-    border: 2px solid black;
-    width: 80%;
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 1rem;
-    ;
-    border-radius: 5px;
-}
-label {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 20px;
-    border-radius: 5px;
-    margin: 10px auto;
-    display: block;
-    width: 50%;
-    text-align: center;
-    
-}
-/* Portfolio */
-.function-integration h1{
-    text-align: center;
-}
-.function-integration img{
-    width: 350px;
-    height: 400px;
-    display: block; /* Important: makes the image a block element */
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-bottom: 2rem;
-}
-.function-integration {
-    width: 40%;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f0f0f0; 
-    margin-top: 130px;
-  }
-
-  .function-integration button{
-    display: block;
-    width: 55%;
-    padding: 10px;
-    margin: 10px auto;
-    margin-bottom: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    
-  } 
-
-  @media (max-width: 1200px) {
-    /* Adjust for large tablets */
-    nav ul li a {
-        font-size: 20px;
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    /* Large Tablets */
+    .carousel-container {
+        width: 200%;
+    }
+    .slide {
+        width: 50vw;
     }
 
     #art-exhibit {
@@ -364,10 +19,9 @@ label {
 }
 
 @media (max-width: 900px) {
-    /* Adjust for tablets */
+    /* Tablets */
     header {
         flex-direction: column;
-        align-items: flex-start;
         padding: 10px;
     }
 
@@ -385,14 +39,6 @@ label {
         font-size: 18px;
     }
 
-    .carousel-container {
-        width: 200%;
-    }
-
-    .slide {
-        width: 50vw;
-    }
-
     #art-exhibit {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -404,7 +50,7 @@ label {
 }
 
 @media (max-width: 600px) {
-    /* Adjust for small tablets and mobile phones */
+    /* Small Tablets and Mobile */
     header {
         padding: 10px;
     }
@@ -422,14 +68,6 @@ label {
         font-size: 16px;
     }
 
-    .carousel-container {
-        width: 100%;
-    }
-
-    .slide {
-        width: 100vw;
-    }
-
     #art-exhibit {
         grid-template-columns: 1fr;
     }
@@ -445,7 +83,7 @@ label {
 }
 
 @media (max-width: 400px) {
-    /* Adjustments for very small mobile devices */
+    /* Very Small Mobile */
     .logo {
         font-size: 14px;
     }
@@ -467,5 +105,3 @@ label {
         height: 240px;
     }
 }
-
-  
